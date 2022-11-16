@@ -42,7 +42,7 @@
 		
 			<th>가입날짜</th>
 		</tr>
-		<c:forEach items="${dtos }" var="dto1">
+		<c:forEach items="${dtos }" var="dto1"> <!-- ArrayList는 for문으로!! -->
 		<tr align="center">
 			
 			<td>${dto1.mid }</td>

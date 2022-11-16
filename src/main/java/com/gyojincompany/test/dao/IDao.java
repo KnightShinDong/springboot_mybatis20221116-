@@ -8,5 +8,6 @@ public interface IDao {
 
 	public void memberJoinDao(String mid, String mpw, String mname, String memail);
 	public ArrayList<MemberDto> memberListDao();
+	public MemberDto searchIdDao(String mid);
 
 }

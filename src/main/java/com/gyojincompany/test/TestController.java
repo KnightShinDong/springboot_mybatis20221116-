@@ -62,14 +62,37 @@ public class TestController {
 		IDao dao = sqlSession.getMapper(IDao.class);
 		
 		 ArrayList<MemberDto> dtos = dao.memberListDao();
-		 
-		 
+		 		 
 		 model.addAttribute("dtos", dtos);
 		 
-		 
-		
 		return "list";
 	}
+	
+	@RequestMapping(value = "searchId")
+	public String searchId() {
+		
+		
+		
+		return "idSearch";
+	}
+	@RequestMapping(value = "idOk")
+	public String idOk(HttpServletRequest request, Model model) {
+		
+		IDao dao = sqlSession.getMapper(IDao.class);
+		
+		String mid =  request.getParameter("searchId");
+						// idSearch에서 넘어올 id파라미터 값을 가져와야 함으로
+						//id를 찾을때 입력하는 값의 이름인"searchId"를 파라미터
+						//값으로 추축해야된다!!!
+		
+		
+		MemberDto dto = dao.searchIdDao(mid);
+		
+		model.addAttribute("searchInfo", dto);
+		
+		return "idOk";
+	}
+	
 	
 	
 }

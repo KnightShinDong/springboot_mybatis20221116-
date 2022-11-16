@@ -12,7 +12,9 @@
 	<select id="memberListDao" resultType="com.gyojincompany.test.dto.MemberDto">
 		SELECT * FROM member ORDER BY mdate DESC
 	</select>
-
+	<select id="searchIdDao" resultType="com.gyojincompany.test.dto.MemberDto">
+		SELECT * FROM member where mid=#{param1}
+	</select>
 
 
 
